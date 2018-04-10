@@ -17,8 +17,7 @@ var callTotal = 0;
 var smsTotal = 0;
 
 function checkedRadioBtn(){
-  var checkedRadioBtn = document.querySelector("input[value='call']:checked");
-  var checkedRadioBtns = document.querySelector("input[value='sms']");
+  var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
   console.log(checkedRadioBtn);
   if (checkedRadioBtn){
       var billItemType = checkedRadioBtn.value
@@ -26,7 +25,7 @@ function checkedRadioBtn(){
     if (billItemType === "call"){
         callsTotal += 2.75
     }
-  }
+
     else if (billItemType === "sms"){
         smsTotal += 0.75;
     }
@@ -45,5 +44,6 @@ function checkedRadioBtn(){
         totalCostElem.classList.add("warning");
     }
 
+}
 }
 radioAddButton.addEventListener('click', checkedRadioBtn);
