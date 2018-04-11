@@ -16,7 +16,7 @@ var callTotalElement = document.querySelector(".callTotalSettings")
 var smsTotalElement = document.querySelector(".smsTotalSettings")
 var totalElement = document.querySelector(".totalSettings")
 //add an event listener for when the 'Update settings' button is pressed
-updateBtn.addEventListener('click', function())
+
 //add an event listener for when the add button is pressed
 
 //in the event listener get the value from the billItemTypeRadio radio buttons
@@ -25,3 +25,66 @@ updateBtn.addEventListener('click', function())
 // * add nothing for invalid values that is not 'call' or 'sms'.
 // * display the latest total on the screen.
 // * check the value thresholds and display the total value in the right color.
+var call = 2.75;
+var sms = 0.75;
+var allCalls = 0;
+var allSms = 0;
+var warning = 40;
+var critical = 60;
+var allTotal = 0;
+
+function updateSettings(){
+  var callSet = callSettings.value
+  var smsSet = smsSettings.value
+  var warningSet = warningSettings.value
+  var criticalSet = criticalSettings.value
+   warning = parseFloat(warningSet)
+   critical = parseFloat(criticalSet)
+   call = parseFloat(callSet)
+   sms = parseFloat(smsSet)
+
+
+
+}
+
+var calls = 0;
+var smss = 0;
+
+function billSettings (){
+  var billSettings = document.querySelector("input[name='billItemTypeWithSettings']:checked");
+
+  if (billSettings){
+    var billItemTypeWithSettings = billSettings.value
+
+    if(allTotal >= critical){
+
+    }
+    else{
+      if (billItemTypeWithSettings === 'call'){
+        calls += call;
+      }
+
+      else if (billItemTypeWithSettings === 'sms'){
+        smss += sms;
+      }
+      allTotal = calls + smss;
+      callTotalElement.innerHTML = calls.toFixed(2);
+      smsTotalElement.innerHTML = smss.toFixed(2);
+      totalElement.innerHTML = allTotal.toFixed(2);
+
+
+      if (allTotal >= critical){
+          // adding the danger class will make the text red
+          totalElement.classList.add("danger");
+      }
+      else if (allTotal >= warning){
+          totalElement.classList.add("warning");
+      }
+    }
+
+
+  }
+}
+addBtn.addEventListener('click', billSettings);
+
+updateBtn.addEventListener('click', updateSettings);

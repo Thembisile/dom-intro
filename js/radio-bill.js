@@ -13,37 +13,34 @@ var totalCostElems = document.querySelector(".totalTwo")
 // * add nothing for invalid values that is not 'call' or 'sms'.
 // * display the latest total on the screen
 
-var callTotal = 0;
-var smsTotal = 0;
+var callTotals = 0;
+var smsTotals = 0;
 
 function checkedRadioBtn(){
   var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
-  console.log(checkedRadioBtn);
   if (checkedRadioBtn){
       var billItemType = checkedRadioBtn.value
       // billItemType will be 'call' or 'sms'
     if (billItemType === "call"){
-        callsTotal += 2.75
+        callTotals += 2.75
     }
 
     else if (billItemType === "sms"){
-        smsTotal += 0.75;
+        smsTotals += 0.75;
     }
-    console.log(callsTotal);
     //update the totals that is displayed on the screen.
-    callsTotalElems.innerHTML = callsTotal.toFixed(2);
-    smsTotalElems.innerHTML = smsTotal.toFixed(2);
-    var totalCost = callsTotal + smsTotal;
-    totalCostElems.innerHTML = totalCost.toFixed(2);
+    callsTotalElems.innerHTML = callTotals.toFixed(2);
+    smsTotalElems.innerHTML = smsTotals.toFixed(2);
+    var totalCosts = callTotals + smsTotals;
+    totalCostElems.innerHTML = totalCosts.toFixed(2);
 
-    if (totalCost >= 80){
+    if (totalCosts >= 70){
         // adding the danger class will make the text red
-        totalCostElem.classList.add("danger");
+        totalCostElems.classList.add("danger");
     }
-    else if (totalCost >= 50){
-        totalCostElem.classList.add("warning");
+    else if (totalCosts >= 40){
+        totalCostElems.classList.add("warning");
     }
-
-}
+  }
 }
 radioAddButton.addEventListener('click', checkedRadioBtn);
