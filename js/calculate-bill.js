@@ -31,10 +31,21 @@ function calculateBtnClicked(){
     if (billTotal >= 30){
         // adding the danger class will make the text red
         billTotalElement.classList.add("danger");
-    }
+      }
+
     else if (billTotal >= 20){
         billTotalElement.classList.add("warning");
-    }
+      }
+
+      if (billTotal < 20) {
+        billTotalElement.classList.remove("warning")
+      }
+      else if (billTotal < 30) {
+        billTotalElement.classList.remove("danger")
+      }
+
+
+
 
     //round to two decimals
     var roundedBillTotal = billTotal.toFixed(2);
