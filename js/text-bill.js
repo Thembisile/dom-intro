@@ -33,11 +33,11 @@ function textBillTotal(){
     totalCostElem.innerHTML = totalCost.toFixed(2);
 
     //color the total based on the criteria
-    if (totalCost >= 80){
+    if (totalCost >= 30){
         // adding the danger class will make the text red
         totalCostElem.classList.add("danger");
     }
-    else if (totalCost >= 50){
+    else if (totalCost >= 20){
         totalCostElem.classList.add("warning");
     }
   }
