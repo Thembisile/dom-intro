@@ -34,11 +34,11 @@ function checkedRadioBtn(){
     var totalCosts = callTotals + smsTotals;
     totalCostElems.innerHTML = totalCosts.toFixed(2);
 
-    if (totalCosts >= 70){
+    if (totalCosts >= 50){
         // adding the danger class will make the text red
         totalCostElems.classList.add("danger");
     }
-    else if (totalCosts >= 40){
+    else if (totalCosts >= 30){
         totalCostElems.classList.add("warning");
     }
   }
