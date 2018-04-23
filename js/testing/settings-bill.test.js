@@ -70,7 +70,8 @@ describe('The Settings Bill Widget Test', function(){
     totalBill.smsSettings('sms');
     totalBill.callSettings('call')
     totalBill.callSettings('call')
+    totalBill.callSettings('call')
 
-    assert.equal(6.25, totalBill.totalReturns());
+    assert.equal(9.0, totalBill.totalReturns());
   })
 })
