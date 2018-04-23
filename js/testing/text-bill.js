@@ -38,10 +38,8 @@ function addTextTotal(){
     function returnSms(){
       return smsTotal;
     }
-
     function returnTotal(){
-      var totalCost = callsTotal + smsTotal;
-      return totalCost;
+      return totalCost = callsTotal + smsTotal;
     }
 
       return {
