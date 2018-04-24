@@ -31,6 +31,11 @@ describe('The text-bill widget Test', function(){
     assert.equal(0.00, smsBillTotal2.returnCalls());
   })
   it('should do nothing for a string of both call and sms', function(){
+    var callAndSms = addTextTotal();
+
+    callAndSms.smsBillTotal('call,sms');
+
+    assert.equal(0.00, callAndSms.returnSms())
   })
   it('should add the total for a string of sms and calls', function(){
     var totalCostBill = addTextTotal();
