@@ -18,4 +18,12 @@ describe('The Radio Bill Widget', function(){
 
     assert.equal(1.50, smsRadio.smsReturn())
   })
+  it('should add and return the total of calls and sms selected', function(){
+    var totalRadio1 = radioBillWidget();
+
+    totalRadio1.smsRadioBtn('sms');
+    totalRadio1.callsRadioBtn('call')
+    totalRadio1.callsRadioBtn('call')
+    assert.equal(6.25, totalRadio1.returnTotalRadio())
+  })
 })

@@ -17,6 +17,7 @@
 
     var callTotals = 0;
     var smsTotals = 0;
+    var totalRadio = 0;
 
     function callsRadioBtn(billItemType){
         if (billItemType === "call"){
@@ -37,13 +38,16 @@
       function smsReturn(){
         return smsTotals;
       }
+      function returnTotalRadio(){
+        return totalRadio = smsTotals + callTotals;
+      }
       return {
         callsRadioBtn,
         smsRadioBtn,
         callsReturn,
-        smsReturn
+        smsReturn,
+        returnTotalRadio
       }
-
     }
 //     //update the totals that is displayed on the screen.
 //     callsTotalElems.innerHTML = callTotals.toFixed(2);

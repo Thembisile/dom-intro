@@ -32,7 +32,7 @@ describe('The text-bill widget Test', function(){
   })
   it('should do nothing for a string of both call and sms', function(){
   })
-  it('should add the total for a string of sms and calls made', function(){
+  it('should add the total for a string of sms and calls', function(){
     var totalCostBill = addTextTotal();
 
     totalCostBill.smsBillTotal('sms');
