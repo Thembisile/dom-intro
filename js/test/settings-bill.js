@@ -34,11 +34,12 @@ function SettingsWidget(){
 
     var calls = 0;
     var smss = 0;
+    var total = 0;
 
     function billSettings (){
       var allTotal = calls + smss;
       if(allTotal >= critical){
-        //shouldn't add anything when threshold is reached
+        total += allTotal;
         }
       }
 
