@@ -4,7 +4,7 @@ var bill = document.querySelector(".billString")
 
 calculateBtn.addEventListener('click', function(){
   var billValue = bill.value;
-  var roundedBillTotal = calculateBtnClicked(billValue);
+  var roundedBillTotal = CalculateBtnClicked(billValue);
   billTotalElement.innerHTML = roundedBillTotal;
 
   if (roundedBillTotal >= 30){

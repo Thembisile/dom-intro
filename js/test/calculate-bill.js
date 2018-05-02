@@ -1,4 +1,4 @@
-function calculateBtnClicked(billValue){
+function CalculateBtnClicked(billValue){
   var billValues = billValue.split(",");
   var billTotal = 0;
   for (var i=0;i<billValues.length;i++){
